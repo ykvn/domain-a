@@ -6,7 +6,7 @@ import hashlib
 import sys
 
 # --- Configuration ---
-REPO_PATH = "/path/to/your/local/domain-a"  # IMPORTANT: Change this to the local path of your cloned repository
+REPO_PATH = "/Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a"  # IMPORTANT: Change this to the local path of your cloned repository
 JOBS_DIR_RELATIVE = "jobs"                  # Relative path to the jobs directory within the repo
 SYNC_REPO_SCRIPT_RELATIVE = os.path.join(JOBS_DIR_RELATIVE, "sync_repo") # Relative path to sync_repo script
 POLLING_INTERVAL_SECONDS = 300              # Check for updates every 5 minutes (300 seconds)
