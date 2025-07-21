@@ -66,7 +66,7 @@ def calculate_md5(filepath):
 
 # --- Main Logic ---
 def main():
-    log_message("CDE Manual Deployment Agent started.")
+    log_message("CDE Deployment Agent started.")
 
     # 1. Validate REPO_ROOT existence
     if not os.path.exists(REPO_ROOT):
@@ -153,7 +153,7 @@ def main():
     else:
         log_message("No updates detected for *.job files after git pull. Nothing to deploy.")
 
-    log_message("CDE Manual Deployment Agent finished.")
+    log_message("CDE Deployment Agent finished.")
     # No need to change back directory, as the script exits.
 
 if __name__ == "__main__":
