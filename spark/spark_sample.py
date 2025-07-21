@@ -1,4 +1,17 @@
+import sys
 from pyspark.sql import SparkSession
+
+# get arguments
+argv1 = sys.argv[1]
+argv2 = sys.argv[2]
+argv3 = sys.argv[3]
+
+# define periode
+load_date = f"'{argv1}'"
+event_date  = f"'{argv2}'"
+month_date  = f"'{argv3}'"
+
+print(f"""run for load_date={load_date} and event_date={event_date} and month_date={month_date}""")
 
 # 1. Create a SparkSession
 # This is the entry point to any PySpark application.
