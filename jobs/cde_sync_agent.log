@@ -1,0 +1,19 @@
+[2025-07-21 21:11:02] [INFO] CDE GitHub Sync Agent started.
+[2025-07-21 21:11:02] [INFO] Changing current working directory to repository root: /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a
+[2025-07-21 21:11:02] [INFO] Performing initial scan of *.job files.
+[2025-07-21 21:11:02] [INFO] Initial scan complete. Found 1 .job files.
+[2025-07-21 21:11:02] [INFO] Polling GitHub for updates in /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a...
+[2025-07-21 21:11:02] [DEBUG] Executing command: git pull
+[2025-07-21 21:11:03] [DEBUG] Command executed successfully.
+[2025-07-21 21:11:03] [INFO] No updates detected for *.job files.
+[2025-07-21 21:11:03] [INFO] Next poll in 300 seconds.
+[2025-07-21 21:12:00] [INFO] CDE GitHub Sync Agent started.
+[2025-07-21 21:12:00] [INFO] Changing current working directory to repository root: /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a
+[2025-07-21 21:12:00] [INFO] Performing initial scan of *.job files.
+[2025-07-21 21:12:00] [INFO] Initial scan complete. Found 1 .job files.
+[2025-07-21 21:12:00] [INFO] Polling GitHub for updates in /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a...
+[2025-07-21 21:12:00] [DEBUG] Executing command: git pull
+[2025-07-21 21:12:01] [ERROR] Command failed with exit code 1: ['git', 'pull']
+[2025-07-21 21:12:01] [ERROR] Stderr: None
+[2025-07-21 21:12:01] [ERROR] Stdout: None
+[2025-07-21 21:12:01] [ERROR] Git pull failed. Skipping this cycle.
