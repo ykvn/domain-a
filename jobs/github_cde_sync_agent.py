@@ -21,7 +21,7 @@ SYNC_REPO_SCRIPT_NAME = "./sync_repo"
 # On many systems, /var/log/ requires root permissions to write directly.
 # Consider changing this to a user-writable directory like os.path.join(REPO_ROOT, "cde_deploy.log")
 # or /home/your_user/cde_deploy.log if you face permission denied errors for /var/log/.
-LOG_FILE = "/var/log/cde_manual_deploy.log"
+LOG_FILE = "/var/log/cde_deploy.log"
 
 # --- Logging Function ---
 def log_message(message, level="INFO"):
@@ -91,7 +91,7 @@ def calculate_md5(filepath):
 
 # --- Main Logic ---
 def main():
-    log_message("CDE Manual Deployment Agent started.")
+    log_message("CDE Deployment Agent started.")
 
     # 1. Validate REPO_ROOT existence
     if not os.path.exists(REPO_ROOT):
@@ -190,7 +190,7 @@ def main():
     else:
         log_message("No updates detected for *.job files after git pull. Nothing to deploy.")
 
-    log_message("CDE Manual Deployment Agent finished.")
+    log_message("CDE Deployment Agent finished.")
 
 if __name__ == "__main__":
     main()
