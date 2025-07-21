@@ -9,7 +9,7 @@ import sys
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JOBS_FULL_PATH = os.path.join(REPO_ROOT, "jobs")
 SYNC_REPO_SCRIPT_NAME = "./sync_repo"
-LOG_FILE = "/var/log/cde_manual_deploy.log" # Make sure user has write access
+LOG_FILE = "/var/log/cde_deploy.log" # Make sure user has write access
 
 # --- Logging Function ---
 def log_message(message, level="INFO"):
@@ -63,7 +63,7 @@ def calculate_md5(filepath):
 
 # --- Main Logic ---
 def main():
-    log_message("CDE Manual Deployment Agent started.")
+    log_message("CDE Deployment Agent started.")
 
     if not os.path.exists(REPO_ROOT):
         log_message(f"Local repository root not found at {REPO_ROOT}. Please clone it first.", level="ERROR")
@@ -160,7 +160,7 @@ def main():
     run_command(["git", "reset", "--hard", "HEAD"])
     run_command(["git", "clean", "-fd"]) # Remove untracked files and directories
 
-    log_message("CDE Manual Deployment Agent finished.", level="INFO")
+    log_message("CDE Deployment Agent finished.", level="INFO")
 
 if __name__ == "__main__":
     main()
