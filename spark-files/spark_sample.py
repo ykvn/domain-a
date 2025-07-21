@@ -28,7 +28,7 @@ df = spark.createDataFrame(data, columns)
 
 # 3. Perform a simple transformation (e.g., filter data)
 # This example filters rows where the ID is greater than 2.
-filtered_df = df.filter(df["ID"] < 10)
+filtered_df = df.filter(df["ID"] <= 10)
 
 # 4. Display the results
 print("Showing dataframe with ID < 10")
