@@ -1,6 +1,9 @@
 # bin/sh
 
 ./cde job create --vcluster-endpoint https://9hh897xc.cde-nvpqj9zv.se-sandb.a465-9q4k.cloudera.site/dex/api/v1 \
-	--name spark-sample --type spark \
-	--mount-1-resource tsel-poc-domain-a \
-	--application-file jobs/spark-files/spark-sample.py
+        --name spark-sample --type spark \
+        --mount-1-resource tsel-poc-domain-a \
+        --application-file jobs/spark-files/spark-sample.py \
+        --arg 1 \
+        --arg 2 \
+        --arg 3
