@@ -15,11 +15,11 @@ df = spark.createDataFrame(data, columns)
 
 # 3. Perform a simple transformation (e.g., filter data)
 # This example filters rows where the ID is greater than 2.
-filtered_df = df.filter(df["ID"] > 2)
+filtered_df = df.filter(df["ID"] > 3)
 
 # 4. Display the results
 <<<<<<< HEAD
-print("Showing dataframe with ID > 2")
+print("Showing dataframe with ID > 3")
 =======
 >>>>>>> 3ccc407bdd0ff38bfb5731f8b686604d31e89e13
 filtered_df.show()
