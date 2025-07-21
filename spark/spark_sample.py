@@ -18,10 +18,7 @@ df = spark.createDataFrame(data, columns)
 filtered_df = df.filter(df["ID"] > 3)
 
 # 4. Display the results
-<<<<<<< HEAD
 print("Showing dataframe with ID > 3")
-=======
->>>>>>> 3ccc407bdd0ff38bfb5731f8b686604d31e89e13
 filtered_df.show()
 
 # 5. Stop the SparkSession
