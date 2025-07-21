@@ -17,7 +17,7 @@ JOBS_FULL_PATH = os.path.join(REPO_ROOT, "jobs")
 # Relative path from the JOBS_FULL_PATH for the sync script
 SYNC_REPO_SCRIPT_NAME = "./sync_repo"
 
-POLLING_INTERVAL_SECONDS = 300 # Check for updates every 5 minutes (300 seconds)
+POLLING_INTERVAL_SECONDS = 60 # Check for updates every 5 minutes (300 seconds)
 
 # Log file location changed to /var/log/
 LOG_FILE = "/var/log/cde_sync_agent.log"
