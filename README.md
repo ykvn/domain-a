@@ -1,3 +1,3 @@
-# tsel-poc-domain-a
+# domain-a
 
-Telkomsel CDE Script for Domain A Use Case POC
+CDE Script for Domain A Use Case
