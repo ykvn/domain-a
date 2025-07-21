@@ -17,3 +17,13 @@
 [2025-07-21 21:12:01] [ERROR] Stderr: None
 [2025-07-21 21:12:01] [ERROR] Stdout: None
 [2025-07-21 21:12:01] [ERROR] Git pull failed. Skipping this cycle.
+[2025-07-21 21:15:46] [INFO] CDE GitHub Sync Agent started.
+[2025-07-21 21:15:46] [INFO] Changing current working directory to repository root: /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a
+[2025-07-21 21:15:46] [INFO] Performing initial scan of *.job files.
+[2025-07-21 21:15:46] [INFO] Initial scan complete. Found 1 .job files.
+[2025-07-21 21:15:46] [INFO] Polling GitHub for updates in /Users/kevin/Documents/Work/Cloudera/POC Telkomsel/domain-a...
+[2025-07-21 21:15:46] [DEBUG] Executing command: git pull
+[2025-07-21 21:15:46] [ERROR] Command failed with exit code 128: ['git', 'pull']
+[2025-07-21 21:15:46] [ERROR] Stderr: None
+[2025-07-21 21:15:46] [ERROR] Stdout: None
+[2025-07-21 21:15:46] [ERROR] Git pull failed. Skipping this cycle.
