@@ -47,8 +47,8 @@ table_4 = "testing.breakage_reference_poc_tokenized"
 # month_date = f'{env["table_2"]["filter_month"]}'
 
 #event_date = "'2025-04-01'"
-#load_date = "'2025-04-01'"
-#month_date = "'2025-03-01'"
+#load_date = "'2025-04-03'"
+#month_date = "'2025-04'"
 
 # get arguments
 argv1 = sys.argv[1]

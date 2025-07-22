@@ -32,13 +32,11 @@ spark = SparkSession.builder \
 spark.sql("SET hive.exec.dynamic.partition = true")
 spark.sql("SET hive.exec.dynamic.partition.mode = nonstrict")
 
-
-
 table_1 = "testing.ifrs_accrual_product_daily_poc_tokenized"
 
 #define periode
-#event_date = "'2025-04-01'"
-#load_date  = "'2025-04-02'"
+#load_date  = "'2025-04-03'"
+#event_date = "'2025-04-01'" --loaddate -1
 
 # get arguments
 argv1 = sys.argv[1]

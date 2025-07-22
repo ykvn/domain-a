@@ -56,9 +56,9 @@ table_8 = 'testing.mkios_evcrec_evcvas_ngrs_reject_poc_tokenized'
 
     #define periode
 #event_date  = "'2025-04-01'"
-#load_date   = "'2025-04-01'"
+#load_date   = "'2025-04-03'"
 #first_date  = "'2025-04-01'"
-#last_date   = "'2025-04-02'"
+#last_date   = "'2025-04-01'"
 
 #print(f"""run for event_date={event_date} and load_date={load_date}""")
 

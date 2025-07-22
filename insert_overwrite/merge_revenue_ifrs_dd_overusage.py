@@ -45,15 +45,14 @@ spark = SparkSession.builder \
 spark.sql("SET hive.exec.dynamic.partition = true")
 spark.sql("SET hive.exec.dynamic.partition.mode = nonstrict")
 
-
-
 table_1 = "testing.ifrs_cons_rate_and_outstanding_dd_poc_tokenized"
 
     #define periode
     # event_date	    = f'{env["table_1"]["filter_d2"]}'
     # load_date       = f'{env["table_1"]["filter_d0"]}'
+
 #event_date	    = "'2025-04-01'"
-#load_date       = "'2025-04-01'"
+#load_date       = "'2025-04-03'"
 
 #print(f"""run for event_date={event_date} and load_date={load_date}""")
 
