@@ -3,17 +3,7 @@
 # --- Configuration ---
 CDE_VCLUSTER_ENDPOINT="https://tcmd4r24.cde-2ppgw79d.tsel-poc.lo0mgs.c0.cloudera.site/dex/api/v1"
 CDE_JOB_NAME="concurrency_poc"
-MSISDN_FILE="msisdn.txt" # MSISDN file in the same directory as this script
-
-# --- Input Argument ---
-# Check if a number of concurrent jobs is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 <total_number_of_concurrent_jobs>"
-    echo "Example: $0 10"
-    exit 1
-fi
-
-MAX_PARALLEL_JOBS="$1"
+MSISDN_FILE="msisdn" # MSISDN file in the same directory as this script
 
 # --- Check if MSISDN file exists ---
 if [ ! -f "$MSISDN_FILE" ]; then
@@ -22,26 +12,35 @@ if [ ! -f "$MSISDN_FILE" ]; then
 fi
 
 echo "Starting CDE job execution for '$CDE_JOB_NAME'."
-echo "Max Parallel Jobs: $MAX_PARALLEL_JOBS"
+echo "Reading MSISDNs from '$MSISDN_FILE' and launching jobs sequentially."
 
-# --- Main execution using xargs for concurrency ---
-# -P $MAX_PARALLEL_JOBS: Run up to MAX_PARALLEL_JOBS in parallel
-# -I {}: Replace {} with each line from the input file
-# --verbose: Show the commands being executed by xargs (optional, can remove if truly minimal)
-# Redirect all output to /dev/null to keep console clean, or remove if you want to see it
-cat "$MSISDN_FILE" | xargs -P "$MAX_PARALLEL_JOBS" -I {} bash -c '
-    MSISDN_ARG="{}" # Capture the MSISDN from xargs
-    JOB_NAME_VAR="'"$CDE_JOB_NAME"'" # Pass bash variables into the subshell
-    ENDPOINT_VAR="'"$CDE_VCLUSTER_ENDPOINT"'"
+# --- Loop through each line in the MSISDN file ---
+# 'read -r line' reads each line into the 'line' variable
+# The 'while IFS= read -r line' construct correctly handles lines with spaces and avoids backslash interpretation
+while IFS= read -r msisdn_arg; do
+    # Skip empty lines
+    if [ -z "$msisdn_arg" ]; then
+        continue
+    fi
+
+    echo "Launching job for MSISDN: $msisdn_arg"
     
     # Execute the CDE job run command
-    # Output of each job run is discarded unless you remove /dev/null redirection
+    # Redirect all output to /dev/null to keep console clean, or remove/redirect to a log file
     ./cde job run \
-        --vcluster-endpoint "$ENDPOINT_VAR" \
-        --name "$JOB_NAME_VAR" \
-        --arg "$MSISDN_ARG" > /dev/null 2>&1
-'
+        --vcluster-endpoint "$CDE_VCLUSTER_ENDPOINT" \
+        --name "$CDE_JOB_NAME" \
+        --arg "$msisdn_arg" > /dev/null 2>&1 &
+    
+    # You can add a check here for the exit status of the 'cde job run' command
+    if [ $? -eq 0 ]; then
+        echo "Job successfully launched for MSISDN: $msisdn_arg"
+    else
+        echo "Error launching job for MSISDN: $msisdn_arg"
+    fi
 
-echo "All CDE jobs launched. Check CDE UI for job status."
+done < "$MSISDN_FILE" # Redirects the content of MSISDN_FILE to the while loop's input
+
+echo "All CDE jobs launched."
 
 exit 0
