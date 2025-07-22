@@ -1,2 +1,2 @@
 # Ignore specific credential files
-credentials
+jobs/credentials
