@@ -1,11 +1,4 @@
-import pyspark.sql.functions as f
-from datetime import *
 import sys
-from pyspark import SQLContext, SparkContext, SparkConf, HiveContext
-from pyspark.sql import HiveContext,DataFrame as spark_df
-from pyspark.sql.window import Window
-from pyspark.sql.functions import *
-from pyspark.sql.types import *
 from pyspark.sql.session import SparkSession
 
 conf = SparkConf()
